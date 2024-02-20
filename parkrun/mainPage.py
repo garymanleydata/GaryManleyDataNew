@@ -109,20 +109,26 @@ if option ==  'Event Summary':
     st.write('**Event Summary at Eastbourne parkrun**')  
     st.dataframe(topAllSumm,hide_index=True)
 
-
-
 ## have club page 
+
+if option ==  'Club Page':
+    # Query the tlatest event summary view and return into a dataframe
+    dfClubQ = ('SELECT * FROM stg_club_list_v')
+    dfClub = pd.read_sql_query(dfClubQ,conn);
+
+    st.write('**Eastbourne parkrun Top 20 Club List**')  
+    st.dataframe(dfClub,hide_index=True)
+
+
+
+
 ## Extract all views into GitHub
-
-
-
-
-
-
-
 
 if option == 'Future Changes':
     st.write('**Planned Changes to the page**') 
     st.write('Add in some age grading calcuations')
     st.write('Add in some integration of weather data for analysis')
     st.write('Add first female finisher split to the 1st finishes page')
+    st.write('Add most top 3 / top 10 finishes by gender')
+    st.write('Current proces does not cater for club changes need an athlete dim with latest club')
+    
