@@ -103,7 +103,7 @@ if option ==  'Event Summary':
     topAllSummBrQ = ('SELECT * FROM stg_bracket_by_year_v')
     topAllSummBr = pd.read_sql_query(topAllSummBrQ,conn);
     st.write('**Eastbourne parkrun by percentage in Finish Time Bracket**')  
-    fig = px.line(topAllSummBr, x="Event Year", y=["Percent Sub 20","Percent 20-24:59 Count","Percent 25-29:59 Count","Percent 30-34:59 Count","Percent 35-40:59 Count", "Percent 40-44:59 Count" ,"Percent 45-49:59 Count","Percent 50-54:59 Count","Percent 55-59:59 Count", "Percent 60+ Count"])
+    fig = px.line(topAllSummBr, x="Event Year", y=["Percent Sub 20","Percent 20-24:59 Count","Percent 25-29:59 Count","Percent 30-34:59 Count","Percent 35-39:59 Count", "Percent 40-44:59 Count" ,"Percent 45-49:59 Count","Percent 50-54:59 Count","Percent 55-59:59 Count", "Percent 60+ Count"])
     st.plotly_chart(fig, use_container_width=True, sharing="streamlit")    
 
     st.write('**Event Summary at Eastbourne parkrun**')  
@@ -119,13 +119,16 @@ if option ==  'Club Page':
     st.write('**Eastbourne parkrun Top 20 Club List**')  
     st.dataframe(dfClub,hide_index=True)
 
-
+### ind page
+## num per year as bar graph
+## best time and place and bests by age bracket
 
 
 ## Extract all views into GitHub
 
 if option == 'Future Changes':
     st.write('**Planned Changes to the page**') 
+    st.write('Individual analysis page')
     st.write('Add in some age grading calcuations')
     st.write('Add in some integration of weather data for analysis')
     st.write('Add first female finisher split to the 1st finishes page')
