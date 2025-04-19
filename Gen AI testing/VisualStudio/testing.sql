@@ -1,0 +1,4 @@
+select  "EVENTNUM", "TOTALSEC"
+from KEBOOLA_7127.WORKSPACE_64748299.STG_PARKRUN_ALL_V av
+where "TOTALSEC" is not null
+order by "TOTALSEC" desc
